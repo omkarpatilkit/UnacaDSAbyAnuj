@@ -1,3 +1,4 @@
+package array;
 public class mostWater {
 
     static void maxWaterHold(int a[]) {
