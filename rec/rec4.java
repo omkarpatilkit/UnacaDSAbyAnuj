@@ -1,16 +1,14 @@
 package rec;
 
+// rat in Maze ;
 public class rec4 {
 
     static boolean ratInMaze(int a[][], boolean vis[][], int i, int j) {
 
-        if (i == a.length || j == a.length || vis[i][j] || a[i][j] == 0) {
-            return false;
-        }
-
-        if (i == a.length - 1 && j == a.length - 1) {
+        if (i == a.length - 1 && j == a.length - 1)
             return true;
-        }
+        if (i == a.length || j == a.length || a[i][j] == 0 || vis[i][j])
+            return false;
 
         vis[i][j] = true;
         if (ratInMaze(a, vis, i + 1, j))
@@ -20,6 +18,7 @@ public class rec4 {
 
         vis[i][j] = false;
         return false;
+
     }
 
     public static void main(String[] args) {
@@ -38,8 +37,9 @@ public class rec4 {
 
         if (ratInMaze(a, vis, i, j))
             System.out.println("Possible");
-        
-        else System.out.println("Not possible");
+
+        else
+            System.out.println("Not possible");
 
     }
 
